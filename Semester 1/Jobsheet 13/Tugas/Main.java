@@ -24,6 +24,8 @@ public class Main{
         mingguTertinggi();
         System.out.println("****************");
         mahasiswaTertinggi();
+        System.out.println("****************");
+        hitungTotalNilai();
     }
 
     public static void inputNamaMahasiswa() {
@@ -72,13 +74,24 @@ public class Main{
         for (int i = 0; i < nilai.length; i++) {
             for (int j = 0; j < nilai[0].length; j++) {
                 if (nilai[i][j] == maxValue) {
-                    System.out.println("Mahasiswa dengan nilai tertinggi adalah " + nama[i] +=
-                            " dengan nilai " + maxValue);
+                    System.out.println("Mahasiswa dengan nilai tertinggi adalah " + nama[i] + " dengan nilai " + maxValue);
                 }
             }
         }
     }
 
+    public static void hitungTotalNilai() {
+        int totalNilaiSemuaMahasiswa = 0;
+        for (int i= 0; i < nilai.length; i++) {
+            int totalNilai = 0;
+            for (int j = 0; j < nilai[i].length; j++) {
+                totalNilai += nilai[i][j];
+            }
+            totalNilaiSemuaMahasiswa += totalNilai;
+            System.out.println(nama[i] + " : " + totalNilai);
+        }
+        System.out.println("Total nilai semua mahasiswa : " + totalNilaiSemuaMahasiswa);
+    }
     static int nilaiTertinggi(int[][] array) {
         int maxValue = 0;
 
